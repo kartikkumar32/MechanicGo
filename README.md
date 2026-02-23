@@ -54,7 +54,7 @@ A full-stack, feature-rich roadside assistance application built with Flask and 
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/lovnishverma/mechanicgo.git](https://github.com/lovnishverma/mechanicgo.git)
+git clone [https://github.com/username/mechanicgo.git](https://github.com/username/mechanicgo.git)
 cd mechanicgo
 
 ```
@@ -124,7 +124,7 @@ App runs at **http://localhost:5000**
 
 1. Go to [Render.com](https://render.com/) and sign in.
 2. Click **New** -> **Web Service**.
-3. Connect your GitHub repository (`lovnishverma/mechanicgo`).
+3. Connect your GitHub repository (`username/mechanicgo`).
 4. Fill in the deployment settings:
 * **Name:** `mechanicgo`
 * **Environment:** `Python 3`
