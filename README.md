@@ -46,7 +46,8 @@
 ### 🚨 User Dashboard — SOS Panel
 > Issue selector, live GPS coordinates, and one-tap emergency dispatch
 
-![Dashboard SOS](https://raw.githubusercontent.com/ministerchief/MechanicGo/main/screenshots/dashboard_sos.png)
+<img width="1752" height="941" alt="image" src="https://github.com/user-attachments/assets/b3ac70e3-c5b7-43a6-a70a-58250802a101" />
+
 
 </td>
 </tr>
@@ -56,7 +57,8 @@
 ### 🔧 Mechanic Portal
 > Availability toggle, real-time job assignments, location sharing, and earnings tracker
 
-![Mechanic Portal](https://raw.githubusercontent.com/ministerchief/MechanicGo/main/screenshots/mechanic_portal.png)
+<img width="1752" height="941" alt="image" src="https://github.com/user-attachments/assets/c4a4401f-7171-473c-8b4e-1ed765bc9a70" />
+
 
 </td>
 <td width="50%">
@@ -64,7 +66,8 @@
 ### 👑 Admin Console
 > Analytics charts, full request oversight, user & mechanic management
 
-![Admin Console](https://raw.githubusercontent.com/ministerchief/MechanicGo/main/screenshots/admin_console.png)
+<img width="1752" height="941" alt="image" src="https://github.com/user-attachments/assets/b957f003-74f2-401a-b818-fe147168c066" />
+
 
 </td>
 </tr>
