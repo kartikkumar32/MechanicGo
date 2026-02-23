@@ -75,7 +75,6 @@
 
 <br/>
 
-> 💡 **Add your own screenshots** by placing images in a `/screenshots` folder in the repository root and updating the paths above.
 
 ---
 
