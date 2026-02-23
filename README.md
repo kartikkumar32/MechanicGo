@@ -1,174 +1,190 @@
 # 🔧 MechanicGo — Complete Roadside Assistance Platform
 
-A full-stack, feature-rich roadside assistance application built with Flask + MySQL. Users can trigger SOS requests, track mechanics in real-time, and rate their experience.
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-3.x-lightgrey.svg?logo=flask&logoColor=black)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-orange.svg?logo=mysql&logoColor=white)
+![Render](https://img.shields.io/badge/Deployed_on-Render-black?logo=render&logoColor=white)
+![Railway](https://img.shields.io/badge/Database-Railway-black?logo=railway&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+A full-stack, feature-rich roadside assistance application built with Flask and MySQL. MechanicGo connects stranded drivers with the nearest available mechanics using real-time GPS tracking and automated dispatching.
 
 ---
 
-Live Demo: https://ministerchief-mechanicgo.hf.space
-
-Live Demo: https://mechanicgo.onrender.com/
-
-
-## ✨ Features
-
-### For Car Owners (Users)
-- 🚨 **One-tap SOS** — triggers automatic nearest mechanic assignment
-- 📍 **Live GPS-based matching** — Haversine formula finds closest available mechanic  
-- 🗺️ **Map Integration** — OpenStreetMap embedded for live location display
-- 📋 **Request History** — view all past and current requests
-- ⭐ **Rate & Review** — star rating system after job completion
-- 🔔 **Notifications** — real-time status updates
-- 👤 **Profile Management** — update personal info
-
-### For Mechanics
-- 🟢 **Online/Offline Toggle** — control availability with one click
-- 📍 **Auto Location Sharing** — GPS auto-updates to server
-- 📥 **Job Dashboard** — see all assigned requests with customer details
-- ▶ **Job Status Updates** — Start → Complete workflow
-- 💰 **Earnings Tracker** — per-job earnings summary
-- 🔄 **Auto-refresh** — polls for new jobs every 15 seconds
-
-### Admin Console
-- 📊 **Analytics Dashboard** — requests over time, issue breakdown charts (Chart.js)
-- 👥 **User Management** — view and delete users
-- 🔧 **Mechanic Oversight** — monitor all mechanics and their status
-- 📋 **Request Management** — change status of any request
-- 🔍 **Search & Filter** — real-time table filtering
-
-### Backend / API
-- 🔐 **Token-based Auth** — secure session tokens with 7-day expiry
-- 🗄️ **Connection Pooling** — MySQL pool of 10 connections
-- 🧮 **Haversine Distance** — SQL-based nearest mechanic calculation
-- 💳 **Payment Model** — cash/card/UPI support (schema ready)
-- 🔒 **Role-based Access** — user / mechanic / admin roles
-- 🏗️ **Auto DB Init** — creates all tables on startup
+### 🌐 Live Demos
+- **Main Demo:** [https://mechanicgo.onrender.com/](https://mechanicgo.onrender.com/)
+- **Alternative Demo:** [https://ministerchief-mechanicgo.hf.space](https://ministerchief-mechanicgo.hf.space)
 
 ---
 
-## 🚀 Quick Start
+## ✨ Key Features
 
-### 1. Clone & Setup
-```bash
-git clone <repo>
-cd mechanicgo
-pip install -r requirements.txt
-```
+### 🚗 For Car Owners (Users)
+- 🚨 **One-tap SOS:** Triggers automatic nearest mechanic assignment.
+- 📍 **Live GPS-based Matching:** Uses the Haversine formula to find the closest available mechanic.
+- 🗺️ **Map Integration:** Embedded OpenStreetMap for live location tracking.
+- ⭐ **Rate & Review:** Star rating system after job completion.
+- 🔔 **Real-time Notifications:** Status updates from dispatch to completion.
 
-### 2. Configure Environment
-```bash
-cp .env.example .env
-# Edit .env with your MySQL credentials
-```
+### 🔧 For Mechanics
+- 🟢 **Availability Toggle:** Control online/offline status with one click.
+- 📍 **Auto Location Sharing:** Seamlessly updates server with live coordinates.
+- 📥 **Job Dashboard:** View assigned requests, customer details, and map routes.
+- ▶ **Workflow Management:** Update job status (Start → In Progress → Complete).
+- 💰 **Earnings Tracker:** Per-job earnings summary.
 
-### 3. Start MySQL & Run
-```bash
-python app.py
-```
-App runs at **http://localhost:5000**
-
----
-
-## 🗺️ Routes
-
-| Route | Description |
-|-------|-------------|
-| `/` | Landing page |
-| `/dashboard` | User dashboard |
-| `/mechanic` | Mechanic portal |
-| `/admin` | Admin console |
-
-## 🔌 API Endpoints
-
-### Auth
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Register user or mechanic |
-| POST | `/api/auth/login` | Login, returns token |
-| POST | `/api/auth/logout` | Invalidate session |
-| GET | `/api/auth/me` | Current user info |
-
-### SOS & Requests
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/sos` | Trigger SOS, auto-assigns mechanic |
-| GET | `/api/requests` | List requests (filtered by role) |
-| PATCH | `/api/requests/:id/status` | Update request status |
-
-### Mechanics
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/mechanics` | List all mechanics |
-| POST | `/api/mechanics/location` | Update mechanic GPS |
-| PATCH | `/api/mechanics/availability` | Toggle online/offline |
-
-### Ratings & Admin
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/ratings` | Submit rating after completion |
-| GET | `/api/admin/stats` | Dashboard analytics |
-| GET | `/api/admin/users` | All users (admin only) |
-| DELETE | `/api/admin/users/:id` | Delete user (admin only) |
-| GET | `/api/notifications` | User notifications |
-
----
-
-## 🔑 Default Admin Account
-```
-Email:    admin@mechanicgo.com
-Password: admin123
-```
-> Change this in production!
-
----
-
-## 🗄️ Database Schema
-
-**Tables:** `users`, `sessions`, `mechanics`, `sos_requests`, `ratings`, `notifications`, `payments`
-
-All tables auto-created on first run via `init_db()`.
+### 👑 Admin Console
+- 📊 **Analytics Dashboard:** Visual charts (Chart.js) for requests over time and issue breakdown.
+- 👥 **User & Mechanic Management:** View, monitor, and manage all platform participants.
+- 📋 **Global Request Oversight:** View and override the status of any active request.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Backend | Flask 3.x, Python |
-| Database | MySQL + mysql-connector-python |
-| Auth | Token-based (SHA-256) |
-| Maps | OpenStreetMap (Leaflet-ready) |
-| Charts | Chart.js 4.4 |
-| Fonts | Syne + DM Sans (Google Fonts) |
-| CSS | Pure CSS custom variables |
+- **Backend:** Python 3, Flask 3.x
+- **Database:** MySQL (Deployed on Railway) + `mysql-connector-python` with connection pooling
+- **Frontend:** HTML5, CSS3, Vanilla JS, Chart.js 4.4, OpenStreetMap
+- **Authentication:** Custom token-based Auth (SHA-256 hashed passwords)
+- **Deployment:** Render (Web Service) + Railway (MySQL Database)
 
 ---
 
-## 🔧 Production Deployment
+## 🚀 Local Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/lovnishverma/mechanicgo.git](https://github.com/lovnishverma/mechanicgo.git)
+cd mechanicgo
+
+```
+
+### 2. Create a Virtual Environment & Install Dependencies
 
 ```bash
-# Use gunicorn
-gunicorn -w 4 -b 0.0.0.0:8000 app:app
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+pip install -r requirements.txt
 
-# Or with nginx reverse proxy
-# Point nginx to localhost:8000
 ```
 
-Set `FLASK_ENV=production` in `.env` for production mode.
+### 3. Configure Environment Variables
+
+Copy the example environment file:
+
+```bash
+cp .env_example .env
+
+```
+
+Edit the `.env` file with your local or remote MySQL credentials:
+
+```env
+SECRET_KEY=generate_a_random_secure_string_here
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=mechanicgo
+DB_PORT=3306
+FLASK_ENV=development
+
+```
+
+### 4. Run the Application
+
+The database tables will automatically initialize on the first run.
+
+```bash
+python app.py
+
+```
+
+App runs at **http://localhost:5000**
 
 ---
 
-## 📁 Project Structure
+## ☁️ Deployment Guide
 
-```
-mechanicgo/
-├── app.py              # Main Flask app with all routes
-├── database.py         # DB connection pool & schema init  
-├── requirements.txt    # Python dependencies
-├── .env.example        # Environment variables template
-├── serviceAccountKey.json  # Firebase (optional)
-└── templates/
-    ├── index.html      # Landing page
-    ├── dashboard.html  # User dashboard
-    ├── mechanic.html   # Mechanic portal
-    └── admin.html      # Admin console
-```
+### Step 1: Deploy MySQL Database on Railway
+
+1. Go to [Railway.app](https://railway.app/) and sign in.
+2. Click **New Project** -> **Provision PostgreSQL/MySQL/Redis** -> Select **MySQL**.
+3. Wait a few seconds for the database to provision.
+4. Click on the newly created MySQL card, go to the **Connect** tab.
+5. Note down the following credentials (you will need them for Render):
+* **Host** (e.g., `xxxxxxx.proxy.rlwy.net`)
+* **Port** (e.g., `23921`)
+* **User** (usually `root`)
+* **Password**
+* **Database Name** (usually `railway`)
+
+
+
+### Step 2: Deploy Flask App on Render
+
+1. Go to [Render.com](https://render.com/) and sign in.
+2. Click **New** -> **Web Service**.
+3. Connect your GitHub repository (`lovnishverma/mechanicgo`).
+4. Fill in the deployment settings:
+* **Name:** `mechanicgo`
+* **Environment:** `Python 3`
+* **Build Command:** `pip install -r requirements.txt`
+* **Start Command:** `gunicorn app:app`
+
+
+5. Scroll down to **Environment Variables** and add the variables from your Railway setup:
+* `SECRET_KEY`: (Create a secure random string)
+* `DB_HOST`: (Paste Railway Host)
+* `DB_USER`: (Paste Railway User)
+* `DB_PASSWORD`: (Paste Railway Password)
+* `DB_NAME`: (Paste Railway DB Name)
+* `DB_PORT`: (Paste Railway Port)
+* `FLASK_ENV`: `production`
+
+
+6. Click **Create Web Service**. Render will now build and deploy your app.
+
+---
+
+## 🗄️ Database Schema
+
+The platform automatically generates the following tables on startup:
+
+* `users`: Stores all user, mechanic, and admin profiles.
+* `sessions`: Manages token-based authentication.
+* `mechanics`: Stores specific mechanic data (specialty, live location, rating).
+* `sos_requests`: Handles all dispatch tickets and statuses.
+* `ratings`: User reviews for completed jobs.
+* `notifications`: In-app alerts for users.
+* `payments`: Tracks transaction statuses.
+
+---
+
+## 🔑 Default Admin Account
+
+A default admin account is created automatically upon database initialization.
+
+* **Email:** `admin@mechanicgo.com`
+* **Password:** `admin123`
+
+> ⚠️ *Important: Change this password immediately after deploying to production!*
+
+---
+
+## 🔌 Core API Routes
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `POST` | `/api/auth/register` | Register a new user or mechanic |
+| `POST` | `/api/auth/login` | Login to receive a session token |
+| `POST` | `/api/sos` | Trigger an SOS to the nearest mechanic |
+| `GET` | `/api/requests` | List requests (role-filtered) |
+| `PATCH` | `/api/requests/:id/status` | Update the state of a job |
+| `POST` | `/api/mechanics/location` | Update mechanic's live GPS coordinates |
+| `GET` | `/api/admin/stats` | Fetch system-wide analytics (Admin) |
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
