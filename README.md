@@ -5,27 +5,6 @@ A full-stack, feature-rich roadside assistance application built with Flask + My
 ---
 
 
-https://freedb.tech/
-
-https://phpmyadmin.freedb.tech/
-
-
-FreeDB Free Database Panel
-Host: 
-sql.freedb.tech
- Port: 
-3306
- Database Name: 
-freedb_mechanicgo
- 
-Database User: 
-freedb_kartikroot
- Password: 
-CD4X?7zGNP24#Xt
-  
- MySQL 8.0  PhpMyAdmin 5.1  0.0 MB
-
-
 ## ✨ Features
 
 ### For Car Owners (Users)
